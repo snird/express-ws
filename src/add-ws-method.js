@@ -1,5 +1,5 @@
-import wrapMiddleware from './wrap-middleware';
-import websocketUrl from './websocket-url';
+const wrapMiddleware = require('./wrap-middleware');
+const websocketUrl = require('./websocket-url');
 
 function addWsMethod(target) {
   /* This prevents conflict with other things setting `.ws`. */
