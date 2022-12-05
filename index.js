@@ -1,4 +1,5 @@
-import expressWs from './src/index';
+const expressWs = require('./src/index');
 
-module.exports = expressWs;
-export default expressWs;
+module.exports = {
+  default: expressWs
+};

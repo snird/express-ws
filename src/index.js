@@ -3,14 +3,19 @@
  *
  * Here be dragons. */
 
-import http from 'http';
-import express from 'express';
-import ws from 'ws';
+const http = require('http');
+const express = require('express');
+const ws = require('ws');
 
-import websocketUrl from './websocket-url';
-import addWsMethod from './add-ws-method';
+const websocketUrl = require('./websocket-url');
+const addWsMethod = require('./add-ws-method');
 
-export default function expressWs(app, httpServer, options = {}) {
+/**
+ * @param {import('express').Application} app express app to apply ws route on
+ * @param {import('http').Server} [httpServer] express http server, if not provided will be created
+ * @param {{wsOptions: import('ws').ServerOptions}} [options] optional server options for ws
+ */
+function expressWs(app, httpServer, options = {}) {
   let server = httpServer;
 
   if (server === null || server === undefined) {
@@ -84,3 +89,5 @@ export default function expressWs(app, httpServer, options = {}) {
     }
   };
 }
+
+module.exports = expressWs;
