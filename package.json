@@ -1,5 +1,5 @@
 {
-  "name": "express-ws",
+  "name": "express-ws2",
   "version": "6.0.0",
   "description": "WebSocket endpoints for Express applications",
   "main": "index.js",
